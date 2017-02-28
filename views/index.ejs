@@ -1,6 +1,5 @@
 <script src="//localhost:35729/livereload.js"></script>
-<script src="../dataParser.js"></script>
 
-<p>Hello World</p>
-<%var dataA = ["hello","goodbye"];%>
-<%for(i=0;i<dataA.length; i++){%> <li> <%= dataA[i] %> </li> <%}%>
+<p id = "Graph" >Hello World</p>
+<%var dataA = dataParser.getData();%>
+<%for(i = 0;i <dataA.length; i++){%> <li> <%= dataA[i] %> </li> <%}%>

@@ -1,4 +1,4 @@
-exports.read = function(){
+dataParser = (function(){
 
   var json = {
   "statuses": [
@@ -416,9 +416,18 @@ exports.read = function(){
   }
 };
 
-//var graph = window.getElementByID("Graph");
-var dataArray = [];
-for (i=0;i<json.statuses.length;i++){dataArray.push(json.statuses[i].text)}
+// var getElement = function(){
+//   var graph = window.getElementByID("Graph");
+//   return graph
+//   }
 
-exports.dataArray = dataArray;
+var getData = function(){
+
+var dataArray = [];
+  for (i=0;i<json.statuses.length;i++){dataArray.push(json.statuses[i].text)}
+  return dataArray
 };
+
+return {getData: getData}
+
+})();

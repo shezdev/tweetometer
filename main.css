@@ -16,27 +16,44 @@ h1 {
 
 .form1 {
   margin: auto;
-  width: 300px;
-  padding: 10px;
-
+  width: 340px;
+  padding: 10px 10px 0px 10px;
 }
 
-input[type="text"] {
-  width: 200px;
+.form-row {
+  height: 40px;
 }
 
 input {
   height: 30px;
+  border-radius: 10px;
 }
-#date-caption {
-  color: white;
+
+input[type="text"] {
+  width: 300px;
+}
+
+input[type="date"] {
+  width: 140px;
+  float: right;
 }
 
 input[type="submit"] {
-  margin-top: -3px;
+  float: right;
+  margin-left: 90px;
+  border-radius: 10px;
+}
+
+.caption {
+  color: white;
+  width: 100px;
 }
 
 .row2 {
+  height: 30px;
+}
+
+.row3 {
   height: 50px;
 }
 
@@ -46,6 +63,7 @@ input[type="submit"] {
   border-radius: 10px;
   background-color: white;
 }
+
 #logo {
   width: 75px;
   height: 75px;

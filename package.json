@@ -1,0 +1,34 @@
+{
+  "name": "tweetometer",
+  "version": "1.0.0",
+  "description": "Twitter trend visualisation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shezdev/tweetometer.git"
+  },
+  "keywords": [
+    "Twitter"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/shezdev/tweetometer/issues"
+  },
+  "homepage": "https://github.com/shezdev/tweetometer#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "jasmine-node": "^1.14.5"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sas": "^1.2.0",
+    "grunt-sass": "^2.0.0"
+  }
+}

@@ -11,6 +11,7 @@ rel='icon' sizes='16x16' type='image/png'>
 <!--
 <script src="js/bootstrap.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="main.css">
+<script src="tweetometer-controller.js"></script>
 </head>
 <body>
   <div class="container">
@@ -22,12 +23,12 @@ rel='icon' sizes='16x16' type='image/png'>
     <form class="form1">
       <div class="row form-row">
         <caption><span class="caption">Search: </span></caption>
-        <input type="text"/>
+        <input id="search-string" type="text" name="search-string" maxlength="140"/>
       </div>
       <div class="row form-row">
         <caption><span class="caption">Start: </span></caption>
         <input type="submit" name="search" value="Search" class="btn btn-default" />
-        <input type="date" name="start-date" class="" />
+        <input type="date" name="start-date" min="2006-03-21" />
       </div>
     </form>
 

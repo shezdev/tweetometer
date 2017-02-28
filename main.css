@@ -1,3 +1,8 @@
+body {
+  /*background-image: url("background.jpg");*/
+  background-color: #d4d5d8;
+  z-index: -10;
+}
 .container {
     width: 800px;
     margin-top: 10px;
@@ -6,7 +11,7 @@
     font-family: Ubuntu, sans-serif;
     color: grey;
     min-height: 400px;
-    background-color: #1856ff;
+    background-color: #627187;
     border-radius: 20px;
 }
 h1 {

@@ -1,6 +1,7 @@
 .container {
     width: 800px;
     border: 1px solid black;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     font-family: Ubuntu, sans-serif;
@@ -9,4 +10,33 @@
 }
 h1 {
   text-align: center;
+}
+
+.form1 {
+  margin: auto;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid black;
+
+}
+
+input[type="text"] {
+  width: 200px;
+}
+
+input {
+  height: 30px;
+}
+
+input[type="submit"] {
+  margin-top: -3px;
+}
+
+.row2 {
+  height: 50px;
+}
+
+#TheGraph {
+  border: 1px solid black;
+  height: 400px;
 }

@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Tweetometer</title>
-    <link rel="stylesheet" type="text/css"
-    href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-
-    <link href='http://assets.makersacademy.com/images/favicons/favicon-16x16.png'
-    rel='icon' sizes='16x16' type='image/png'>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<head>
+<title>Tweetometer</title>
+<link rel="stylesheet" type="text/css"
+href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+<link href='http://assets.makersacademy.com/images/favicons/favicon-16x16.png'
+rel='icon' sizes='16x16' type='image/png'>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!--
-    <script src="js/bootstrap.min.js"></script> -->
-
-    <link rel="stylesheet" type="text/css" href="main.css">
-  </head>
-  <body>
-    <div class="container">
-       <h1>Tweetometer</h1>
-       <form>
-         <input type="text" />
-         <input type="submit" name="search" class="btn btn-default" />
-
-       </form>
+<script src="js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tweetometer</h1>
+    <div class="row">
+      <div class="col-sm-1 col-md-1"></div>
+        <div class="col-sm-10 col-md-10">
+          <form class="form1">
+            <input type="text" />
+            <input type="submit" name="search" class="btn btn-default" />
+          </form>
+        </div>
+      <div class="col-sm-1 col-md-1"></div>
     </div>
-  </body>
+
+    <div class="row row2"></div>
+
+    <div class="row">
+      <div class="col-sm-1 col-md-1"></div>
+        <div class="col-sm-10 col-md-10" id="TheGraph">
+          GRAPH GOES HERE!
+        </div>
+      <div class="col-sm-1 col-md-1"></div>
+    </div>
+
+    <div class="row row2"></div>
+
+  </div>
+</body>
 </html>

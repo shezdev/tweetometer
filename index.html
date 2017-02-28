@@ -15,12 +15,17 @@ rel='icon' sizes='16x16' type='image/png'>
 <body>
   <div class="container">
     <h1>Tweetometer</h1>
+    <div id="logo">
+      <img src="eagle.jpg" alt="eagle" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350"/>
+    </div>
     <div class="row">
       <div class="col-sm-1 col-md-1"></div>
         <div class="col-sm-10 col-md-10">
           <form class="form1">
-            <input type="text" />
+            <input type="text" value="Search"/>
             <input type="submit" name="search" class="btn btn-default" />
+            <caption><span id="date-caption">Start date: &nbsp;&nbsp;</span></caption>
+            <input type="date" name="start-date" class="" />
           </form>
         </div>
       <div class="col-sm-1 col-md-1"></div>

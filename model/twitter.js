@@ -1,17 +1,24 @@
 "use strict";
 
-var TwitterSearch = function(callback){
+var twit = require('twitter')
+var config = require('./config')
 
-  var Twitter = require('twitter');
+  twitter = new twit(config);
 
-  var client = new Twitter({
-    consumer_key: 'xjGaJNZNiw0orjqBxXVZyT387',
-    consumer_secret: 'xSylmWQCarNzizPBagLbVxoJSpUEo5fI87UhSKzMTlQPtzTVd1',
-    bearer_token: 'AAAAAAAAAAAAAAAAAAAAANKtzQAAAAAACeVL2WBRi0vqO9k8Dx87Xf69UGU%3DdZfyGtv0d9J9xd195pS7j4ww0os4jyvgLpwbNTDuJ5fhBSAIDM'
-  });
+var params = {
+  q: 'superhero since:2017-02-27 until:2017-02-28',
+  count: 100
+}
 
-    client.get('search/tweets', {q: 'pancake'}, function(error, tweets, response) {
-      callback(tweets);
-    });
 
-};
+  twitter.get('search/tweets', params, gotTweets);
+
+    function gotTweets(error, tweets, response) {
+      var tws = tweets.statuses;
+      console.log(tws);
+      for (var i = 0; i < tws.length; i++) {
+        console.log(tws[i].text);
+        console.log(tws[i].created_at);
+      }
+
+  };

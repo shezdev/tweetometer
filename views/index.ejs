@@ -1,5 +1,8 @@
 <script src="//localhost:35729/livereload.js"></script>
-
-<p id = "Graph" >Hello World</p>
+<form method = "post" action="/">
+<input type = "text" name = "username">
+<input type = "submit">
+</form>
+<p>hello</p>
 <%var dataA = dataParser.getData();%>
 <%for(i = 0;i <dataA.length; i++){%> <li> <%= dataA[i] %> </li> <%}%>

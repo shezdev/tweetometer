@@ -1,5 +1,4 @@
 body {
-  /*background-image: url("background.jpg");*/
   background-color: #d4d5d8;
   z-index: -10;
 }
@@ -37,12 +36,14 @@ input {
 #search-string {
   width: 285px;
   float: right;
+  color: grey;
 }
 
 #interval-txt {
   width: 50px;
   color: white;
   float: right;
+  color: grey;
 }
 
 #start-btn {

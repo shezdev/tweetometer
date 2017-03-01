@@ -2,30 +2,48 @@
 
 ( function(exports){
 
-  var twit = require('twitter')
-  var config = require('config')
-  var twitter = new twit(config)
+  var twit = require('twitter');
+  var config = require('config');
+  var twitter = new twit(config);
 
   function Search() {
   }
 
   function formatParams(string)  {
-    var request = { q: string + ' since:2017-02-27 until:2017-02-28', count: 10 }
-    return request
-  };
-
-  Search.prototype.getTweets = function(string)  {
-
-    var params = formatParams(string)
-
-    twitter.get('search/tweets', params, function(error, tweets, response){
-        console.log(this)
-        this.tws = tweets.statuses;
-        console.log(this.tws)
-    }.bind(this))
-
+    var request = { track: string };
+    return request;
   }
 
-exports.Search = Search
+  // Search.prototype.stopStream = function () {
+  //   stream.destroy();
+  // };
+
+  Search.prototype.getTweets = function(string)  {
+    var params = formatParams(string);
+    var count = 0
+
+    twitter.stream('statuses/filter', params, function(stream){
+
+      stream.on('data', function(tweet) {
+      this.tweets = tweet.text
+      console.log(this.tweets)
+      setTimeout(() => stream.destroy(), 1000)
+    }.bind(this));
+
+      stream.on('error', function(error){
+        console.log(error);
+      }.bind(this));
+
+    });
+  };
+
+exports.Search = Search;
 
 })(this);
+
+var s = new Search();
+s.getTweets('india');
+// console.log(this)
+// this.tws = tweets.statuses;
+// console.log(this.tws)
+// .bind(this)

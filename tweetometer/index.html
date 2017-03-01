@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tweetometer</title>
+<link rel="stylesheet" type="text/css"
+href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+<link href='http://assets.makersacademy.com/images/favicons/favicon-16x16.png'
+rel='icon' sizes='16x16' type='image/png'>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!--
+<script src="js/bootstrap.min.js"></script> -->
+<!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+
+</head>
+<body>
+ <div class="container">
+   <h1>Tweetometer</h1>
+   <div id="logo">
+     <img src="eagle.jpg" alt="eagle" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350"/>
+   </div>    <form class="form1">
+     <div class="row form-row">
+       <caption><span class="caption">Search: </span></caption>
+       <input id="search-string" type="text" name="search-string" maxlength="140"/>
+     </div>
+     <div class="row form-row">
+       <caption><span class="caption">Start: </span></caption>
+       <!-- <input type="submit" name="search" value="Search" class="btn btn-default" /> -->
+       <button id="search-btn" class="btn btn-default">Search</button>
+       <input type="date" name="start-date" min="2006-03-21" />
+     </div>
+   </form>    <div class="row row2"></div>
+     <div class="col-sm-1 col-md-1"></div>
+       <div id="results-box" class="col-sm-10 col-md-10" >
+         GRAPH GOES HERE!
+       </div>
+     <div class="col-sm-1 col-md-1"></div>
+   </div>    <div class="row row3"></div>  </div>
+</body>
+<script src="dataParser.js"></script>
+<script src="view.js"></script>
+</html>

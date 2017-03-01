@@ -34,24 +34,35 @@ input {
   border-radius: 10px;
 }
 
-input[type="text"] {
-  width: 300px;
-}
-
-input[type="date"] {
-  width: 140px;
+#search-string {
+  width: 285px;
   float: right;
 }
 
-#search-btn {
+#interval-txt {
+  width: 50px;
+  color: white;
   float: right;
-  margin-left: 90px;
+}
+
+#start-btn {
+  float: right;
+  margin-left: 112px;;
   border-radius: 10px;
 }
 
-.caption {
+#stop-btn {
+  float: right;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+caption {
   color: white;
-  width: 100px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 5px;
 }
 
 .row2 {
@@ -62,9 +73,13 @@ input[type="date"] {
   height: 50px;
 }
 
+.srch-btns-row {
+  color: white;
+}
+
 #results-box {
   border: 2px solid white;
-  height: 400px;
+  min-height: 400px;
   border-radius: 10px;
   background-color: white;
 }

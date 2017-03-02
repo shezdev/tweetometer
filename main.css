@@ -19,51 +19,25 @@ h1 {
 }
 
 .form1 {
-  margin: auto;
-  width: 340px;
+  width: 400px;
+  margin: 20px auto 0px auto;
   padding: 10px 10px 0px 10px;
-}
-
-.form-row {
   height: 40px;
-}
-
-input {
-  height: 30px;
-  border-radius: 10px;
+  color: white;
+  font-weight: bold;
 }
 
 #search-string {
-  width: 285px;
+  width: 220px;
   float: right;
   color: grey;
+  height: 30px;
 }
 
-#interval-txt {
-  width: 50px;
-  color: white;
-  float: right;
-  color: grey;
-}
-
-#start-btn {
-  float: right;
-  margin-left: 112px;;
-  border-radius: 10px;
-}
-
-#stop-btn {
+#start-btn, #stop-btn {
   float: right;
   margin-left: 10px;
-  border-radius: 10px;
-}
-
-caption {
-  color: white;
-  width: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 5px;
+  height: 30px;
 }
 
 .row2 {
@@ -72,10 +46,6 @@ caption {
 
 .row3 {
   height: 50px;
-}
-
-.srch-btns-row {
-  color: white;
 }
 
 #results-box {

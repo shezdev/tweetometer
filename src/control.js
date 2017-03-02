@@ -1,5 +1,7 @@
 
 var Control = (function() {
+
+  return {}
   var newSearch = new Search();
 
   var getTweets = function(word) {
@@ -16,4 +18,4 @@ var Control = (function() {
   }
   return { returnHTML:returnHTML,
             getTweets:getTweets}
-})();
+})(this);

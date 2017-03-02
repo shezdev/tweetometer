@@ -1,11 +1,18 @@
 $( document ).ready(function() {
 
-  // temp dummy:
+  // to do : reset all when press stop
+
+  // to do : set interval button
+
+  // to do : temp dummy; replace with search obj
+
   var search =  {
-    getResults: function(srchStrng) {return "<li>More results...</li>";}
+    getTweets: function(srchStrng) {return "<li>More results...</li>";}
   }
 
+  // DEFAULT_INTERVAL = 3000
   var stopSrch = false;
+  var repeats = 0; // 2 * user minutes input
 
   $('#search-string').val("");
   $('#search-string').focus();
@@ -28,14 +35,17 @@ $( document ).ready(function() {
   });
 
   function getResults() {
-    setInterval(printResults, 2000);
-    $('#search-string').focus();
+    var searchString = $('#search-string').val();
+  
+    $('#search-string').prop('disabled', true);
+    $("#search-heading").html("Seach for: " +  searchString);
+    setInterval(printResults, 3000);
   }
 
   function printResults() {
+    var searchString = $('#search-string').val();
     if (stopSrch == false) {
-      var srch = $('#search-string').val();
-      $('#results-list').append(search.getResults(srch));
+      $('#results-list').append(search.getTweets(searchString));
     }
   }
 });

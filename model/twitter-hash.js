@@ -4,9 +4,9 @@
 
   var HashtagCount = require ('hashtag-count');
   var config = require('config');
-  var hc = new HashtagCount(config);
 
   function Search() {
+    this.hc = new HashtagCount(config);
   }
 
   Search.prototype.tweetParams = function (string, interval, history) {
@@ -24,11 +24,11 @@
         console.error(error);
       }
       else {
-        console.log(results);
+        showTweets(results, false);
       }
     };
 
-    hc.start({
+    this.hc.start({
       hashtags: hashtags,
       interval: interval,
       history: history,
@@ -36,18 +36,29 @@
     });
   };
 
-  Search.prototype.stopTweets = function () {
-    hc.stopStream();
+  var showTweets = function(results, runner) {
+    if (runner === false) {
+      console.log(results)
+    }
+    else {
+      return "test"
+    }
   };
 
-  Search.prototype.stopper = function () {
-    var limit = '1 seconds';
+  // Search.prototype.stopTweetsStream = function () {
+  //   this.hc.stopStream();
+  // };
 
-    hc.start({
-      hashtags: ['test'],       // required
-      interval: '1 seconds',       // required
-      limit: limit,             // optional
+  Search.prototype.stopper = function () {
+    showTweets('test', true)
+    var limit = '0 seconds';
+
+    this.hc.start({
+      hashtags: ['test'],
+      interval: '0 seconds',
+      limit: limit,
     });
+
   };
 
   exports.Search = Search;
@@ -56,6 +67,4 @@
 var s = new Search();
 s.tweetParams('trump');
 
-
-s.stopTweets();
 s.stopper();

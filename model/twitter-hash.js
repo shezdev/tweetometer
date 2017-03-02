@@ -1,7 +1,6 @@
 "use strict";
 
 (function(exports){
-
   var HashtagCount = require ('hashtag-count');
   var config = require('config');
   var hc = new HashtagCount(config);

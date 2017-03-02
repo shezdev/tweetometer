@@ -25,7 +25,6 @@ var hash = { '2017-03-02T11:51:54.060Z': { trump: 20 },
 var getData = (function(){
   var timestamp = function(hash) {
     var keys = Object.keys(hash);
-    // console.log(keys)
     var timeStamp = keys[keys.length -1 ]
     return timeStamp
   }
@@ -33,18 +32,10 @@ var getData = (function(){
   var nMentions = function(hash){
     var array = Object.values(hash);
     var string = Object.keys(array[array.length - 1])
-    console.log(hash)
     return array[array.length - 1][string]
   }
 
   return { timestamp:timestamp,
-  nMentions:nMentions }
+          nMentions:nMentions,
+         }
 })();
-
-
-
-
-// var dataArray = [];
-// for (i=0;i<json.length;i++){dataArray.push(json[i].created_at)}
-  // return {nMentions:nMentions}
-// })(json);

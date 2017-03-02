@@ -40,11 +40,22 @@
     hc.stopStream();
   };
 
+  Search.prototype.stopper = function () {
+    var limit = '1 seconds';
+
+    hc.start({
+      hashtags: ['test'],       // required
+      interval: '1 seconds',       // required
+      limit: limit,             // optional
+    });
+  };
+
   exports.Search = Search;
 }(this));
 
 var s = new Search();
-s.tweetParams('cat');
+s.tweetParams('trump');
 
 
 s.stopTweets();
+s.stopper();

@@ -12,8 +12,8 @@
   Search.prototype.tweetParams = function (string, interval, history) {
     var hashtags = [];
     hashtags.push(string);
-    var interval =  interval || '5 seconds';
-    var history = history || '5 seconds';
+    var interval =  interval || '30 seconds';
+    var history = history || '30 seconds';
     this.getTweets(hashtags, interval, history);
   };
 
@@ -40,22 +40,5 @@
     hc.stopStream();
   };
 
-  // Search.prototype.stopper = function () {
-  //   var limit = '0 seconds';
-  //
-  //   hc.start({
-  //     hashtags: ['test'],       // required
-  //     interval: '0 seconds',       // required
-  //     limit: limit,             // optional
-  //   });
-  // };
-
   exports.Search = Search;
 }(this));
-
-var s = new Search();
-s.tweetParams('trump');
-
-
-s.stopTweets();
-s.stopper();

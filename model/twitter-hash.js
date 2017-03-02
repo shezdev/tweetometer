@@ -21,7 +21,7 @@
   Search.prototype.getTweets = function (hashtags, interval, history) {
     var intervalCb = function (err, results) {
       if (err) {
-        console.error(error);
+        console.error(err);
       }
       else {
         console.log(results);
@@ -40,15 +40,15 @@
     hc.stopStream();
   };
 
-  Search.prototype.stopper = function () {
-    var limit = '1 seconds';
-
-    hc.start({
-      hashtags: ['test'],       // required
-      interval: '1 seconds',       // required
-      limit: limit,             // optional
-    });
-  };
+  // Search.prototype.stopper = function () {
+  //   var limit = '0 seconds';
+  //
+  //   hc.start({
+  //     hashtags: ['test'],       // required
+  //     interval: '0 seconds',       // required
+  //     limit: limit,             // optional
+  //   });
+  // };
 
   exports.Search = Search;
 }(this));

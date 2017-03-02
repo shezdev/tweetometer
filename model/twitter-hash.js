@@ -23,7 +23,7 @@
         console.error(err);
       }
       else {
-        console.log(results);
+        Control.returnHTML(getData, results);
       }
     };
 
@@ -34,7 +34,7 @@
       intervalCb: intervalCb,
     });
   };
-  
+
 Search.prototype.stopTweets = function(){
   hc.stopStream();
 };

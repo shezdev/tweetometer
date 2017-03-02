@@ -1,14 +1,5 @@
 $( document ).ready(function() {
 
-  // to do : replace this test obj dummy with instantiation
-  var transformer =  {
-    getTweets: function(srchStrng) {
-      $('#results-list').append("<li>More results...</li>");
-    },
-    stopStream: function() {}
-  }
-  // to do : temp testing function to delete
-
   var twitterStarted;
   initialiseInterface();
 
@@ -35,7 +26,7 @@ $( document ).ready(function() {
 
   $('#stop-btn').click(function(event) {
     event.preventDefault();
-    transformer.stopStream();
+    Control.stopStream();
     initialiseInterface();
   });
 
@@ -43,7 +34,7 @@ $( document ).ready(function() {
     if (!twitterStarted) {
       var searchString = $('#search-string').val();
       $('#results-list').empty();
-      transformer.getTweets(searchString);
+      Control.getTweets(searchString);
       twitterStarted = true;
       $("#search-heading").html("Seach for: " + searchString);
       $('#search-string').prop('disabled', true);

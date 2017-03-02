@@ -9,11 +9,10 @@
 <!--
 <script src="js/bootstrap.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="main.css">
-<script src="tweetometer-controller.js"></script>
 </head>
 <body>
   <div class="container">
-    <button onclick="getMore();" class="btn btn-default">More</button>
+    <!-- <button onclick="getMore();" class="btn btn-default">More</button> -->
     <h1>Tweetometer</h1>
     <div id="logo">
       <img src="eagle.jpg" alt="eagle" class="img-responsive img-circle margin"
@@ -44,9 +43,13 @@
 
   </div>
   <script>
-  function getMore() {
+    function getMore() {
       $('#results-list').append("<li>More results...</li>");
     }
   </script>
+  <script src="model/twitter-hash.js"></script>
+  <script src="tweetometer-controller.js"></script>
+  <script src="src/control.js"></script>
+  <script src="src/dataParser.js"></script>
 </body>
 </html>

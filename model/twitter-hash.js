@@ -34,10 +34,10 @@
       intervalCb: intervalCb,
     });
   };
-
-  Search.prototype.stopTweets = function () {
-    hc.stopStream();
-  };
+  
+Search.prototype.stopTweets = function(){
+  hc.stopStream();
+};
 
   exports.Search = Search;
 }(this));

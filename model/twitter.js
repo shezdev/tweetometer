@@ -14,21 +14,17 @@
     return request;
   }
 
-  // Search.prototype.stopStream = function () {
-  //   stream.destroy();
-  // };
-
-  Search.prototype.getTweets = function(string)  {
+  Search.prototype.getTweets = function(string, interval)  {
     var params = formatParams(string);
-    var count = 0
+    var tweets = []
 
-    twitter.stream('statuses/filter', params, function(stream){
+    twitter.stream('statuses/filter', params, function(stream, interval){
 
-      stream.on('data', function(tweet) {
-      this.tweets = tweet.text
-      console.log(this.tweets)
-      setTimeout(() => stream.destroy(), 1000)
-    }.bind(this));
+      stream.on('data', function(tweet, interval) {
+        tweets.push(tweet.id)
+        setTimeout(() => stream.destroy(), 10000)
+        console.log(tweets.length)
+      }.bind(this));
 
       stream.on('error', function(error){
         console.log(error);
@@ -42,7 +38,7 @@ exports.Search = Search;
 })(this);
 
 var s = new Search();
-s.getTweets('india');
+s.getTweets('india', 1000);
 // console.log(this)
 // this.tws = tweets.statuses;
 // console.log(this.tws)

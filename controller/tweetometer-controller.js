@@ -1,6 +1,5 @@
 $( document ).ready(function() {
-
-
+  var ws = new WebSocket('ws://127.0.0.1:1337/', 'echo-protocol');
   // var search = new Search();
   // var dataParser = new dataParser();
   // var control = new Control();
@@ -28,8 +27,15 @@ $( document ).ready(function() {
 
   $('#start-btn').click(function(event) {
     event.preventDefault();
-    getResults();
+    // getResults();
+    var searchString = $('#search-string').val();
+    ws.send(searchString)
   });
+
+  ws.addEventListener("message", function(e) {
+    var msg = e.data;
+    $('#results-list').append("<li>More results...</li>"+msg);
+  })
 
   $('html').keypress(function (e) {
     var key = e.which;

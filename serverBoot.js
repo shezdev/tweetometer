@@ -1,9 +1,12 @@
 'use strict';
 
+var twitterHash = require('./twitterHash');
 var http = require('http');
+var newSearch = new twitterHash();
 var server = http.createServer(function(request,response) {
-
 });
+
+// console.log(newSearch.tweetParams('trump'))
 
 server.listen(1337, function(){
   console.log((new Date()) + 'Server is listening on port 1337');
@@ -23,7 +26,11 @@ wsServer.on('request', function(r){
   clients[id] = connection;
   console.log((new Date()) + ' Connection accepted [' + id + ']');
 
+
+
   connection.on('message', function(message){
+    // newSearch.stopTweets();
+    newSearch.tweetParams(message.utf8Data);
     var msgString = message.utf8Data;
 
     for(var i in clients){

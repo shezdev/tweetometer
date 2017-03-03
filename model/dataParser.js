@@ -1,22 +1,22 @@
-(function(exports){
+var dataParser = function(hash) {
+  this.timestamp(hash);
+  this.nMentions(hash);
+  this.output();
+}
 
-  function getData() {
-  }
-  
-  var timestamp = function(hash) {
+  dataParser.prototype.timestamp = function (hash) {
     var keys = Object.keys(hash);
-    var timeStamp = keys[keys.length -1 ]
-    return timeStamp
-  }
+    this.timeS = keys[keys.length -1 ];
+  };
 
-  var nMentions = function(hash){
-    var array = Object.values(hash);
-    var string = Object.keys(array[array.length - 1])
-    return array[array.length - 1][string]
-  }
+  dataParser.prototype.nMentions = function (hash) {
+    var results = Object.values(hash)[0];
+    var number = Object.values(results);
+    this.arr = number
+  };
 
-  return { timestamp:timestamp,
-          nMentions:nMentions,
-         }
-  exports.getData = getData;
-})(this);
+  dataParser.prototype.output = function () {
+    console.log(this.timeS + " Mentions: " + this.arr)
+  };
+
+module.exports = dataParser;

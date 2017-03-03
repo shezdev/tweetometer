@@ -34,7 +34,7 @@
       intervalCb: intervalCb,
     });
   };
-  
+
 Search.prototype.stopTweets = function(){
   hc.stopStream();
 };

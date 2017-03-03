@@ -1,5 +1,10 @@
 $( document ).ready(function() {
 
+
+  // var search = new Search();
+  // var dataParser = new dataParser();
+  // var control = new Control();
+
   // to do : replace this test obj dummy with instantiation
   var transformer =  {
     getTweets: function(srchStrng) {

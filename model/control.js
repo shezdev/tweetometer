@@ -1,11 +1,14 @@
+(function(exports) {
 
-var Control = (function(getData) {
+  function Control (getData) {
+
+  }
 
   var getTweets = function(word) {
     getTweets(word);
   };
 
-  var returnHTML = function(getData) {
+  var returnHTML = function(getData, hash) {
     var result = document.getElementById('results-box');
     result.insertAdjacentHTML("beforeend", '<li>' + getData.timestamp(hash) + ': ' + getData.nMentions(hash) + '</li>')
   };
@@ -15,6 +18,6 @@ var Control = (function(getData) {
   }
   return { returnHTML:returnHTML,
             getTweets:getTweets}
-})();
 
-Control.returnHTML(getData);
+  exports.Control = Control;
+})(this);

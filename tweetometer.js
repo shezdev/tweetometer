@@ -7,11 +7,11 @@ var Search = (function(){
 
   return {
 
-    tweetParams: function (string, interval, history) {
+    tweetParams: function () {
       var hashtags = [];
-      hashtags.push(string);
-      var interval =  interval || '30 seconds';
-      var history = history || '30 seconds';
+      hashtags.push('Trump');
+      var interval =  '5 seconds';
+      var history = '5 seconds';
       return this._getTweets(hashtags, interval, history);
     },
 
@@ -20,7 +20,8 @@ var Search = (function(){
         if (err) {
           console.error(err);
         }
-        else if (results != undefined) {
+        else if (results !== undefined) {
+          console.log(results);
           return results;
         }
       }
@@ -37,7 +38,7 @@ var Search = (function(){
       hc.stopStream();
     }
   }
-  // exports.Search = Search;
+
 })();
 
 var http = require('http');
@@ -49,9 +50,15 @@ http.createServer( function (request, response) {
   console.log("Request for " + pathname + " received.");
 
     if (pathname == "/search"){
-      var results =  Search.tweetParams("Trump");
+      var results = Search.tweetParams();
       console.log(results);
       // var results = "WeloveDonald";
+      response.writeHead(200, {'Content-Type': 'text/html'})
+      response.write(results);
+      response.end();
+    } else if (pathname == "/gettweets"){
+      var results = Search.tweetParams();
+      console.log(results);
       response.writeHead(200, {'Content-Type': 'text/html'})
       response.write(results);
       response.end();

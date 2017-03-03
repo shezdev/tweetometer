@@ -62,8 +62,8 @@ $( document ).ready(function() {
           // to do put code in here so that when get data send request again
       }
     };
-    xhttp.open("GET","http://localhost:8080/getString/" + twitMeterSearchString, true)
-    xhttp.open("GET", twitMeterSearchString, true);
+    xhttp.open("GET","http://127.0.0.1:8080/search/" + twitMeterSearchString, true)
+    // xhttp.open("GET","http://192.168.0.6:8080/" + twitMeterSearchString, true)
     xhttp.send();
   }
 

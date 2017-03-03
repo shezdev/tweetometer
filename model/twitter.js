@@ -33,13 +33,10 @@
     });
   };
 
-exports.Search = Search;
+  exports.Search = Search;
 
 })(this);
 
+
 var s = new Search();
 s.getTweets('india', 1000);
-// console.log(this)
-// this.tws = tweets.statuses;
-// console.log(this.tws)
-// .bind(this)

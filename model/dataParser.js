@@ -2,6 +2,7 @@ var dataParser = function(hash) {
   this.timestamp(hash);
   this.nMentions(hash);
   this.output();
+  var serverBoot = require('../serverBoot');
 }
 
   dataParser.prototype.timestamp = function (hash) {

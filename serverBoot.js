@@ -29,7 +29,6 @@ wsServer.on('request', function(r){
 
 
   connection.on('message', function(message){
-    // newSearch.stopTweets();
     newSearch.tweetParams(message.utf8Data);
     var msgString = message.utf8Data;
 

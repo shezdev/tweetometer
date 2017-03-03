@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- <button onclick="getMore();" class="btn btn-default">More</button> -->
+    <button onclick="getMore();" class="btn btn-default">More</button>
     <h1>Tweetometer</h1>
     <div id="logo">
       <img src="eagle.jpg" alt="eagle" class="img-responsive img-circle margin"
@@ -31,6 +31,9 @@
     </form>
 
     <div class="row row2"></div>
+    <script>
+
+    </script>
 
     <div class="row">
       <div class="col-sm-1 col-md-1"></div>
@@ -49,6 +52,11 @@
     function getMore() {
       $('#results-list').append("<li>More results...</li>");
     }
+    function thing() {
+      var response = $.get("http://127.0.0.1:8080/hw.html");
+      $('#results-list').append("<li>" + response.responseText + "<li>");
+    }
+
   </script>
 </body>
 </html>

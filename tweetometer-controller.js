@@ -51,7 +51,7 @@ $( document ).ready(function() {
   }
 
   function stopStream() {
-    // to do send message to server to stop last search: via ajax
+    $.get("http://127.0.0.1:8080/stop");
   }
 
   function startSearch() {
@@ -61,7 +61,7 @@ $( document ).ready(function() {
           getTweets();
       }
     };
-    xhttp.open("GET","http://127.0.0.1:8080/search", true)
+    xhttp.open("GET","http://127.0.0.1:8080/search", true) // to do add srchstrg
     xhttp.send();
   }
 

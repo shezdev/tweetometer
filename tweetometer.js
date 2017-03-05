@@ -1,7 +1,5 @@
 "use strict";
 
-// to do : change cupplied method names, they are terrible!
-
 var Search = (function(){
   var HashtagCount = require ('hashtag-count');
   var config = require('config');
@@ -23,10 +21,10 @@ var Search = (function(){
       });
       var intervalCb = function (err, results) {
         if (err) { console.error(err);}
-        else if (results !== undefined) { this.setResults(results);}
+        else if (results !== undefined && results != {})  { this.setResults(results);}
       }
     },
-    getTweets() { // will this block the hc process?
+    getTweets() {
       var results;
       while (true) {
         if (this.getResults() != {}) {
@@ -71,17 +69,24 @@ http.createServer( function (request, response) {
                               'Access-Control-Allow-Origin': '*'})
       response.write(results);
       response.end();
+      // to do why is it receiveing this
     } else if (pathname == '/stop'){
       Search.stopTweets();
+
+    // } else if (pathname == 'eagle.jpg' ) {
+    //
+    //   console.log("jpg")
+
     } else {
 
       fs.readFile(pathname.substr(1), function (err, data) {
         if (err) {
           console.log(err);
           response.writeHead(404, {'Content-Type': 'text/html'});
+          
         } else {
-          response.writeHead(200, {'Content-Type': 'text/html',
-                                  'Access-Control-Allow-Origin': '*'})
+          // response.writeHead(200, {'Content-Type': 'text/html',
+          response.writeHead(200, {'Access-Control-Allow-Origin': '*'})
           response.write(data.toString());
         }
         response.end();
@@ -91,29 +96,3 @@ http.createServer( function (request, response) {
 }).listen(8080);
 
 console.log('Tweetometer server running at http://127.0.0.1:8080/');
-
-// latest error:
-//
-// Tweetometer server running at http://127.0.0.1:8080/
-// Request for /index.html received.
-// Request for /bootstrap/css/bootstrap.min.css received.
-// Request for /main.css received.
-// Request for /tweetometer-controller.js received.
-// Request for /eagle.jpg received.
-// Request for /eagle.jpg received.
-// Request for /gettweets received.
-// Request for /stop received.
-// /Users/rossbenzie/tweetometer/node_modules/twit/lib/twitter.js:399
-//   self.streamingConnection.stop();
-//                           ^
-//
-// TypeError: Cannot read property 'stop' of undefined
-//     at Twitter.closeStream (/Users/rossbenzie/tweetometer/node_modules/twit/lib/twitter.js:399:27)
-//     at HashtagCount.stopStream (/Users/rossbenzie/tweetometer/node_modules/hashtag-count/lib/hashtag-count.js:25:10)
-//     at Object.stopTweets (/Users/rossbenzie/tweetometer/tweetometer.js:44:10)
-//     at Server.<anonymous> (/Users/rossbenzie/tweetometer/tweetometer.js:70:14)
-//     at emitTwo (events.js:106:13)
-//     at Server.emit (events.js:191:7)
-//     at HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:546:12)
-//     at HTTPParser.parserOnHeadersComplete (_http_common.js:99:23)
-// rossbenzie tweetometer $
